@@ -9,15 +9,11 @@
   {% endif %}
 
   <div class="custom-logo-site-title">
-    <a data-pjax href="{{ config.root }}"  class="brand" rel="start">
+    <a href="{{ config.root }}"  class="brand" rel="start">
       <span class="site-title">{{ config.title }}</span>
     </a>
   </div>
-    {% if theme.seo %}
-      <h1 class="site-subtitle" itemprop="description">{{ config.subtitle }}</h1>
-    {% else %}
-      <p class="site-subtitle">{{ config.subtitle }}</p>
-    {% endif %}
+  <p class="site-subtitle">{{ config.subtitle }}</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -36,7 +32,7 @@
       {% for name, path in theme.menu %}
         {% set itemName = name.toLowerCase() %}
         <li class="menu-item menu-item-{{ itemName }}">
-          <a data-pjax href="{{ url_for(path) }}" rel="section">
+          <a href="{{ url_for(path) }}" rel="section">
             {% if theme.menu_icons.enable %}
               <i class="menu-item-icon fa fa-fw fa-{{theme.menu_icons[itemName] | default('question-circle') | lower }}"></i> <br />
             {% endif %}
@@ -49,7 +45,7 @@
         <li class="menu-item menu-item-search">
           {% if theme.swiftype_key %}
             <a href="javascript:;" class="st-search-show-outputs">
-          {% elseif config.search || theme.algolia_search.enable %}
+          {% elseif config.search %}
             <a href="javascript:;" class="popup-trigger">
           {% endif %}
             {% if theme.menu_icons.enable %}
