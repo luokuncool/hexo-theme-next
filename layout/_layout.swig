@@ -20,7 +20,7 @@
     {% set container_class = container_class + 'sidebar-position-' + theme.sidebar.position %}
   {% endif %}
 
-  <div class="{{ container_class }} {% block page_class %}{% endblock %} ">
+  <div id="pjax-container" class="{{ container_class }} {% block page_class %}{% endblock %} ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -61,6 +61,7 @@
   {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
   {% include scheme_script %}
 
+  {% include '_scripts/pages/post-details.swig' %}
   {% block script_extra %}{% endblock %}
 
   {% include '_scripts/boostrap.swig' %}
@@ -72,6 +73,7 @@
   {% include '_scripts/third-party/lean-analytics.swig' %}
   {% include '_scripts/baidu-push.swig' %}
   {% include '_components/algolia-search/assets.swig' %}
+  {% include '_scripts/pjax.swig' %}
 
 </body>
 </html>

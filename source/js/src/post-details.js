@@ -1,7 +1,8 @@
 /* global NexT: true */
 
-$(document).ready(function () {
+NexT.postDetails = {};
 
+NexT.postDetails.init = function(){
   initScrollSpy();
   NexT.utils.needAffix() && initAffix();
   initTOCDimension();
@@ -72,9 +73,7 @@ $(document).ready(function () {
     $('.post-toc').css('max-height', height);
   }
 
-});
 
-$(document).ready(function () {
   var html = $('html');
   var TAB_ANIMATE_DURATION = 200;
   var hasVelocity = $.isFunction(html.velocity);
@@ -137,4 +136,5 @@ $(document).ready(function () {
       }
     }
   };
-});
+};
+$(NexT.postDetails.init);

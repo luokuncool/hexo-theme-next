@@ -1,6 +1,10 @@
-/* global NexT: true */
-
-$(document).ready(function () {
+<script src="//cdn.bootcss.com/jquery.pjax/1.9.6/jquery.pjax.js"></script>
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+<script type="text/javascript">
+$(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
+$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 3000, fragment: '#pjax-container'});
+$(document).on('pjax:complete', function () {
+  NexT.motion.integrator.cursor = -1;
 
   $(document).trigger('bootstrap:before');
 
@@ -22,25 +26,21 @@ $(document).ready(function () {
     });
   });
 
-
   CONFIG.fancybox && NexT.utils.wrapImageWithFancyBox();
   NexT.utils.embeddedVideoTransformer();
   NexT.utils.addActiveClassToMenuItem();
 
-
-  // Define Motion Sequence.
-  NexT.motion.integrator
-    .add(NexT.motion.middleWares.logo)
-    .add(NexT.motion.middleWares.menu)
-    .add(NexT.motion.middleWares.postList)
-    .add(NexT.motion.middleWares.sidebar);
-
   $(document).trigger('motion:before');
 
   NexT.motion.init();
-
-    // Bootstrap Motion.
-  CONFIG.motion && NexT.motion.integrator.bootstrap();
-
+  if (CONFIG.motion) {
+    $('.archive-year').velocity('transition.slideLeftIn');
+    CONFIG.motion && NexT.motion.integrator.bootstrap();
+  }
+  NexT.postDetails.init();
   $(document).trigger('bootstrap:after');
+
+  DUOSHUO.EmbedThread('.ds-thread');
+  DUOSHUO.ThreadCount('.ds-thread-count')
 });
+</script>
