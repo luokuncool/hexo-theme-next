@@ -2,7 +2,7 @@
 <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
 <script type="text/javascript">
 $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done);
-$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 3000, fragment: '#pjax-container'});
+$(document).pjax('a[target!="_blank"]', '#pjax-container', {timeout: 8000, fragment: '#pjax-container'});
 $(document).on('pjax:complete', function () {
   NexT.motion.integrator.cursor = -1;
 
