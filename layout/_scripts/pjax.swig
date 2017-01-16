@@ -41,6 +41,8 @@ $(document).on('pjax:complete', function () {
   $(document).trigger('bootstrap:after');
 
   DUOSHUO.EmbedThread('.ds-thread');
-  DUOSHUO.ThreadCount('.ds-thread-count')
+  DUOSHUO.ThreadCount('.ds-thread-count');
+
+  undefined === ga || ga('send', 'pageview');
 });
 </script>
