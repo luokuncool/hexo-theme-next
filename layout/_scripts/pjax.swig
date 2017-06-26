@@ -40,9 +40,6 @@ $(document).on('pjax:complete', function () {
   NexT.postDetails.init();
   $(document).trigger('bootstrap:after');
 
-  DUOSHUO.EmbedThread('.ds-thread');
-  DUOSHUO.ThreadCount('.ds-thread-count');
-
   undefined === ga || ga('send', 'pageview');
 });
 </script>
