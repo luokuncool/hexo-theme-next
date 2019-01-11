@@ -24,6 +24,8 @@
       <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
     {% elseif theme.youyan_uid %}
       <div id="uyan_frame"></div>
+    {% elseif theme.gitalk %}
+          <div id="gitalk-container"></div>
     {% endif %}
   </div>
 {% endif %}

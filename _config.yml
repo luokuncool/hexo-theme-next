@@ -270,6 +270,12 @@ mathjax:
 # Duoshuo ShortName
 # duoshuo_shortname: luokuncool
 
+gitalk:
+  client_id: 08c30a9aaaa97034937b
+  client_secret: 3817a221fb13f1bf89be79429047753c53f330c9
+  repo: luokuncool.github.io
+  owner: luokuncool
+
 # Disqus
 #disqus_shortname:
 
