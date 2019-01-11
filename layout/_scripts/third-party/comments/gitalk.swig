@@ -1,3 +1,4 @@
+{% if (theme.gitalk.client_id) %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script
@@ -12,5 +13,6 @@ var gitalk = new Gitalk({
     distractionFreeMode: false  // Facebook-like distraction free mode
 })
 
-gitalk.render('gitalk-container')
+document.getElementById('gitalk-container') && gitalk.render('gitalk-container')
 </script>
+{% endif %}

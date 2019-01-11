@@ -53,6 +53,7 @@
     <div class="back-to-top">
       <i class="fa fa-arrow-up"></i>
     </div>
+    {% include './_scripts/third-party/comments/gitalk.swig' %}
   </div>
 
   {% include '_scripts/vendors.swig' %}
@@ -73,6 +74,7 @@
   {% include '_scripts/third-party/lean-analytics.swig' %}
   {% include '_scripts/baidu-push.swig' %}
   {% include '_components/algolia-search/assets.swig' %}
+  {% include '_scripts/pjax.swig' %}
 
 </body>
 </html>
